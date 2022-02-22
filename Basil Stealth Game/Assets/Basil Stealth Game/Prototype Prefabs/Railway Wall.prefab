@@ -9,11 +9,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5477972687095712716, guid: fb8b773c00cf86841a061a3143a2473a, type: 3}
       propertyPath: m_Name
-      value: Till Wall
+      value: Railway Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8993363766808901819, guid: fb8b773c00cf86841a061a3143a2473a, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993363766808901819, guid: fb8b773c00cf86841a061a3143a2473a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993363766808901819, guid: fb8b773c00cf86841a061a3143a2473a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8993363766808901819, guid: fb8b773c00cf86841a061a3143a2473a, type: 3}
       propertyPath: m_LocalScale.z
