@@ -28,6 +28,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         if (shouldSpawn)
         {
             Transform characterModel = Instantiate(Characters[Random.Range(0, Characters.Length)], transform).transform;
@@ -66,7 +69,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (distanceToTarget < 0.1f && !hasArrived)
         {
             hasArrived = true;
-            
+
             StartCoroutine(waitForPosition());
         }
         else
@@ -117,6 +120,13 @@ public class EnemyBehaviour : MonoBehaviour
         Destination = playerTransform.position;
         agent.destination = playerTransform.position;
         HasBeenDetected = true;
+
+        if (Vector3.Distance(transform.position, playerTransform.position) < 0.1f)
+        {
+            FindObjectOfType<CaughtCanvas>().enter();
+
+            gameObject.SetActive(false);
+        }
     }
 
     IEnumerator waitForPosition()
