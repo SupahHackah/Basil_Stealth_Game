@@ -10,6 +10,8 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         ani = GetComponent<Animator>();
+
+        PlayerPrefs.SetInt("isCaught", 0);
     }
     void Update()
     {
@@ -25,7 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerDetector"))
+        if (other.gameObject.CompareTag("PlayerDetector") && PlayerPrefs.GetInt("isCaught") == 0)
         {
             other.transform.parent.GetComponent<EnemyBehaviour>().detectPlayer(transform);
         }
