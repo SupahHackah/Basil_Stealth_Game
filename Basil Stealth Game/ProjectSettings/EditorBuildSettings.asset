@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Basil Stealth Game/Levels/MALL_2.unity
-    guid: 42a491320728285468321972c28e1f7a
+    path: Assets/Basil Stealth Game/Levels/Final Level.unity
+    guid: 41c786ffa86bce74b9bf71d5d251e6f1
   m_configObjects: {}
