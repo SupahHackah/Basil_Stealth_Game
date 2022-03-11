@@ -7,6 +7,10 @@ TagManager:
   - CinemachineTarget
   - PlayerDetector
   - Character
+  - Caught Detector
+  - PlayStation
+  - Train
+  - Block
   layers:
   - Default
   - TransparentFX
@@ -14,8 +18,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - people
+  - Block
   - 
   - 
   - 

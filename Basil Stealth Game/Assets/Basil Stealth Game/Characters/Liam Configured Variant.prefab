@@ -13,27 +13,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.52551603
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.52551603
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.6
+      value: 0.52551603
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.78928
+      value: 23.878
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 7.482
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.107553
+      value: -58.445
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6138923895777843317, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_Name
       value: Liam Configured Variant
@@ -71,12 +75,32 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321523695958950486, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4123177642777943866, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128063986421979777, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 990f7bd53ae84e74cba4e132ceebff6f, type: 2}
     - target: {fileID: 5866666021909216657, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
       propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8574611706167915169, guid: fb4678ac3ba83db4f8b0791baa3f05ba, type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

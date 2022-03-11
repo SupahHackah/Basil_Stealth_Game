@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Basil Stealth Game/Levels/Final Level.unity
     guid: 41c786ffa86bce74b9bf71d5d251e6f1
+  - enabled: 1
+    path: Assets/Basil Stealth Game/Levels/win.unity
+    guid: a61a130a0e6c5504594d233caf5d0957
   m_configObjects: {}
