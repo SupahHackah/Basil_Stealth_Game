@@ -196,20 +196,23 @@ public class EnemyBehaviour : MonoBehaviour
             LookForPosition();
         }
 
-        if (!HasBeenDetected && hasGottenPS5 && isHostile)
+        if (PlayerPrefs.GetInt("crouch") == 0)
         {
-            ani.SetTrigger("Walk");
+            if (!HasBeenDetected && hasGottenPS5 && isHostile)
+            {
+                ani.SetTrigger("Walk");
 
-            //player.enemiesWhoKnowYou.Add(transform);
-            // indexInListForBlur = player.enemiesWhoKnowYou.Count - 1;
-        }
-        if (!isFalling)
-        {
-            ani.SetBool("Destination", false);
+                //player.enemiesWhoKnowYou.Add(transform);
+                // indexInListForBlur = player.enemiesWhoKnowYou.Count - 1;
+            }
+            if (!isFalling)
+            {
+                ani.SetBool("Destination", false);
 
-            Destination = playerTransform.position;
-            agent.destination = Destination;
-            HasBeenDetected = true;
+                Destination = playerTransform.position;
+                agent.destination = Destination;
+                HasBeenDetected = true;
+            }
         }
     }
 
@@ -226,7 +229,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void catchPlayer()
     {
-        if (PlayerPrefs.GetInt("isCaught") == 0)
+        if (PlayerPrefs.GetInt("isCaught") == 0 && PlayerPrefs.GetInt("crouch") == 0)
         {
             if (Random.Range(0, 2) == 1)
             {

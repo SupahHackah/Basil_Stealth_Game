@@ -11,6 +11,8 @@ public class PlayerBehaviour : MonoBehaviour
     public List<Transform> enemiesWhoKnowYou = new List<Transform>();
 
     public Transform winTrain;
+    public Transform particlePoint;
+    public GameObject landParticle;
 
     float minimumDistance;
     [SerializeField] float currentBackflipTime;
@@ -99,6 +101,8 @@ public class PlayerBehaviour : MonoBehaviour
                 StartCoroutine(flipEffect());
 
                 currentBackflipTime = backflipTimer;
+
+                ani.ResetTrigger("Stand");
             }
         }
 
@@ -126,6 +130,28 @@ public class PlayerBehaviour : MonoBehaviour
                 FindObjectOfType<WinLoose>().end(true);
             }
         }
+
+        if (Input.GetKey(KeyCode.LeftControl))
+        {
+            PlayerPrefs.SetInt("crouch", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("crouch", 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            ani.SetTrigger("Crouch");
+
+            ani.ResetTrigger("Stand");
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            ani.SetTrigger("Stand");
+        }
+
     }
 
 
@@ -140,13 +166,13 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (collisionInfo.gameObject.CompareTag("Train"))
         {
-            
+
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("PlayerDetector") && PlayerPrefs.GetInt("isCaught") == 0 && PlayerPrefs.GetInt("hasGotPS5") == 1)
+        if (other.gameObject.CompareTag("PlayerDetector") && PlayerPrefs.GetInt("isCaught") == 0 && PlayerPrefs.GetInt("hasGotPS5") == 1 && PlayerPrefs.GetInt("crouch") == 0)
         {
             if (other.transform.parent.GetComponent<EnemyBehaviour>().isHostile)
             {
@@ -154,7 +180,7 @@ public class PlayerBehaviour : MonoBehaviour
             }
         }
 
-        if (other.gameObject.CompareTag("Caught Detector") && PlayerPrefs.GetInt("hasGotPS5") == 1 && PlayerPrefs.GetInt("isCaught") == 0)
+        if (other.gameObject.CompareTag("Caught Detector") && PlayerPrefs.GetInt("hasGotPS5") == 1 && PlayerPrefs.GetInt("isCaught") == 0 && PlayerPrefs.GetInt("crouch") == 0)
         {
             other.transform.parent.GetComponent<EnemyBehaviour>().catchPlayer();
         }
@@ -176,7 +202,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     IEnumerator flipEffect()
     {
-        yield return new WaitForSeconds(1.1f);
+        yield return new WaitForSeconds(1.2f);
 
         Collider[] colliders = Physics.OverlapSphere(transform.position, sphereSize);
 
@@ -187,6 +213,8 @@ public class PlayerBehaviour : MonoBehaviour
             if (enemy_)
             {
                 enemy_.fall();
+                GameObject particle_ = Instantiate(landParticle, particlePoint.position, landParticle.transform.rotation);//particlePoint.rotation);
+                Destroy(particle_, 2f);
             }
         }
     }
